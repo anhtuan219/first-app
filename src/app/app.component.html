@@ -13,5 +13,12 @@
   <!--viec du lieu nhap den dau duoc hien thi ngay lap tuc den do la dac diem single page application cua angular-->
   <input type="text" [(ngModel)]="authorProject">
   <p>You just typed: {{authorProject}}</p>
+  <p>Button below will be clickable after 2s</p>
+  <button [disabled]="statusFlag" (click)="toggleState()">Change state</button>
+  <h4>State: {{state}}</h4>
+  <hr>
+  <input type="text" [(ngModel)]="name" placeholder="Enter your name">
+  <p>Name: {{name}}</p>
+  <button [disabled]="checkName()" (click)="setBlank()">Set name to blank</button>
 </body>
 </html>
