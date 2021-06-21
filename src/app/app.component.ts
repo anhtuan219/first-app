@@ -12,6 +12,11 @@ export class AppComponent {
   disableButton = true;
   authorProject = 'Tuan';
   name = '';
+  ifFlag = true;
+  arr = ['bua', 'buff', 'harrow']
+  word = '';
+  SH = true;
+  counter:number[] = [];
 
   constructor()
   {
@@ -39,5 +44,37 @@ export class AppComponent {
   setBlank()
   {
     this.name = '';
+  }
+
+  toggleIfFlag()
+  {
+    this.ifFlag = !this.ifFlag;
+  }
+
+  getColor()
+  {
+    if(this.ifFlag == true)
+      return 'green';
+    else
+      return 'red';
+  }
+  
+  add()
+  {
+    this.arr.push(this.word);
+  }
+
+  updateSH()
+  {
+    this.SH = !this.SH;
+    this.counter.push(this.counter.length + 1);
+  }
+
+  getBGC()
+  {
+    if(this.counter.length > 4)
+      return 'greenyellow';
+    else
+      return 'white';
   }
 }

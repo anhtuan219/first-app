@@ -16,9 +16,32 @@
   <p>Button below will be clickable after 2s</p>
   <button [disabled]="statusFlag" (click)="toggleState()">Change state</button>
   <h4>State: {{state}}</h4>
+
   <hr>
+
   <input type="text" [(ngModel)]="name" placeholder="Enter your name">
   <p>Name: {{name}}</p>
   <button [disabled]="checkName()" (click)="setBlank()">Set name to blank</button>
+
+  <hr>
+
+  <h2 [ngStyle]="{color: getColor()}">This is an example of ngIf</h2>
+  <p *ngIf="ifFlag; else elseblock">ifFlag is true</p>
+  <ng-template #elseblock>
+    <p>ifFlag is false</p>
+  </ng-template>
+  <button (click)="toggleIfFlag()">Change ifFlag</button>
+
+  <hr>
+
+  <input type="text" placeholder="Type words" [(ngModel)]="word">
+  <button (click)="add()">Submit words</button>
+  <li *ngFor="let tu of arr">{{tu}}</li>
+
+  <hr>
+
+  <button (click)="updateSH()">Show or hide</button>
+  <p *ngIf="SH == true">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti ex expedita quae. Repellat quod ad atque, sequi eos dolores eius ullam deserunt temporibus labore quis magnam quaerat distinctio soluta illum.</p>
+  <p *ngFor="let click of counter" [ngStyle]="{backgroundColor: getBGC()}">{{click}}</p>
 </body>
 </html>
